@@ -1,0 +1,11 @@
+{
+    "type": "record",
+    "name": "CheckoutCreatedEvent",
+    "namespace": "br.felipeosilva.checkout.event",
+    "fields": [
+        {
+            "name": "checkoutCode",
+            "type": "["string", "null"]"
+        }
+    ]
+}
