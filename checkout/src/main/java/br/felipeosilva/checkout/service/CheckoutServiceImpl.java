@@ -13,13 +13,13 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CheckoutServiceImpl implements CheckoutService {
 
-
     private final CheckoutRepository checkoutRepository;
 
     @Override
     public Optional<CheckoutEntity> create(CheckoutRequest checkoutRequest) {
         final CheckoutEntity checkoutEntity = CheckoutEntity.builder()
                 .code(UUID.randomUUID().toString())
+                .status(CheckoutEntity.Status.CREATED)
                 .build();
         return Optional.of(checkoutRepository.save(checkoutEntity));
     }
